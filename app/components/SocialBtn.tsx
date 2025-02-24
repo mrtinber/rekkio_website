@@ -10,16 +10,18 @@ interface SocialBtnProps {
 
 export const SocialBtn = ({ content }: SocialBtnProps) => {
     return (
-        <button className="bg-white text-black p-2 rounded-full">
-            {content === "Instagram" ? (
-                <InstagramIcon />
-            ) : content === "SoundCloud" ? (
-                <SoundCloudIcon />
-            ) : content === "YouTube" ? (
-                <YouTubeIcon />
-            ) : (
-                <LinkedInIcon />
-            )}
-        </button>
+        <a href={content === "SoundCloud" ? "https://soundcloud.com/kasiop" : content === "YouTube" ? "https://www.youtube.com/@kasiopmusic/videos" : "https://www.instagram.com/__kasiop/"}>
+            <button className="bg-white text-black p-2 rounded-full hover:text-white hover:bg-transparent transition-all duration-300">
+                {content === "Instagram" ? (
+                    <InstagramIcon />
+                ) : content === "SoundCloud" ? (
+                    <SoundCloudIcon />
+                ) : content === "YouTube" ? (
+                    <YouTubeIcon />
+                ) : (
+                    <LinkedInIcon />
+                )}
+            </button>
+        </a>
     );
 };
