@@ -108,7 +108,7 @@ export default function Home() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="flex justify-between gap-16"
                 >
                     {workshopSteps.map((step, index) => (

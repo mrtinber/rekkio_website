@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { CustomerInput } from "./CustomerInput";
+import { motion } from "framer-motion";
 
 type CustomerData = {
     type: CustomerType;
@@ -43,7 +44,7 @@ export const CustomerForm = () => {
 
     useEffect(() => {
         setFormData((prev) => ({
-            ...formData,
+            ...prev,
             type: customerType,
         }));
     }, [customerType]);
@@ -83,87 +84,96 @@ export const CustomerForm = () => {
                 </div>
             </div>
 
-            {customerType === "particulier" ? (
-                <>
-                    <div className="flex gap-12">
-                        <CustomerInput
-                            name="lastName"
-                            type="text"
-                            onChange={handleChange}
-                            label="Nom :"
-                            required
-                        />
-                        <CustomerInput
-                            name="firstName"
-                            type="text"
-                            onChange={handleChange}
-                            label="Prénom :"
-                            required
-                        />
-                    </div>
-                    <div className="flex gap-12">
-                        <CustomerInput
-                            name="age"
-                            type="number"
-                            onChange={handleChange}
-                            label="Âge :"
-                            required
-                        />
-                        <CustomerInput
-                            name="city"
-                            type="text"
-                            onChange={handleChange}
-                            label="Ville de résidence :"
-                            required
-                        />
-                    </div>
-                </>
-            ) : (
-                <>
-                    <div className="flex gap-12">
-                        <CustomerInput
-                            name="companyName"
-                            type="text"
-                            onChange={handleChange}
-                            label="Nom de la structure :"
-                            required
-                        />
-                        <CustomerInput
-                            name="city"
-                            type="text"
-                            onChange={handleChange}
-                            label="Ville :"
-                            required
-                        />
-                    </div>
-                </>
-            )}
-            <div className="flex gap-12">
-                <CustomerInput
-                    name="email"
-                    type="email"
-                    onChange={handleChange}
-                    label="Adresse e-mail :"
-                    required
-                />
-                <CustomerInput
-                    name="phoneNumber"
-                    type="tel"
-                    onChange={handleChange}
-                    label="Numéro de téléphone :"
-                    required={false}
-                />
-            </div>
-            <div className="flex flex-col gap-2">
-                <label htmlFor="message">Message :</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Ecrivez vos demandes particulières ici."
-                    onChange={handleChange}
-                    className="text-black px-2 p-1 rounded-md w-64"
-                />
-            </div>
+            <motion.div
+                key={customerType} // Change de clé à chaque changement d'état, forçant une réanimation
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col gap-2"
+            >
+                {customerType === "particulier" ? (
+                    <>
+                        <div className="flex gap-12">
+                            <CustomerInput
+                                name="lastName"
+                                type="text"
+                                onChange={handleChange}
+                                label="Nom :"
+                                required
+                            />
+                            <CustomerInput
+                                name="firstName"
+                                type="text"
+                                onChange={handleChange}
+                                label="Prénom :"
+                                required
+                            />
+                        </div>
+                        <div className="flex gap-12">
+                            <CustomerInput
+                                name="age"
+                                type="number"
+                                onChange={handleChange}
+                                label="Âge :"
+                                required
+                            />
+                            <CustomerInput
+                                name="city"
+                                type="text"
+                                onChange={handleChange}
+                                label="Ville de résidence :"
+                                required
+                            />
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className="flex gap-12">
+                            <CustomerInput
+                                name="companyName"
+                                type="text"
+                                onChange={handleChange}
+                                label="Nom de la structure :"
+                                required
+                            />
+                            <CustomerInput
+                                name="city"
+                                type="text"
+                                onChange={handleChange}
+                                label="Ville :"
+                                required
+                            />
+                        </div>
+                    </>
+                )}
+                <div className="flex gap-12">
+                    <CustomerInput
+                        name="email"
+                        type="email"
+                        onChange={handleChange}
+                        label="Adresse e-mail :"
+                        required
+                    />
+                    <CustomerInput
+                        name="phoneNumber"
+                        type="tel"
+                        onChange={handleChange}
+                        label="Numéro de téléphone :"
+                        required={false}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="message">Message :</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Ecrivez vos demandes particulières ici."
+                        onChange={handleChange}
+                        className="text-black px-2 p-1 rounded-md w-64"
+                    />
+                </div>
+            </motion.div>
             <button
                 type="submit"
                 className="text-black mt-4 flex-none self-start uppercase font-semibold bg-white py-2 px-8 hover:bg-transparent hover:text-white transition-all duration-300"
