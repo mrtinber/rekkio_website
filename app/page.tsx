@@ -1,10 +1,24 @@
+"use client";
+
 import Image from "next/image";
-import React, { FormEvent } from "react";
+import React from "react";
 import { Banner } from "./components/Banner";
 import { Footer } from "./components/Footer";
 import { ProjectStepCard } from "./components/ProjectStepCard";
 import { projectSteps, workshopSteps } from "./data/steps";
 import { CustomerForm } from "./components/CustomerForm";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            staggerChildren: 0.3,
+        },
+    },
+};
 
 export default function Home() {
     return (
@@ -18,7 +32,16 @@ export default function Home() {
                         width={350}
                         height={150}
                     />
-                    <div className="text-justify">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: { duration: 1.8 },
+                        }}
+                        viewport={{ once: true }}
+                        className="text-justify"
+                    >
                         <p>
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
@@ -51,14 +74,21 @@ export default function Home() {
                             dépendantes ou des structures pour personnes en
                             situation de handicap.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
             <section className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8">
                 <h2 className="text-4xl font-bold">
                     Les étapes de la mise en place du projet
                 </h2>
-                <div className="flex justify-between gap-16">
+                <motion.div
+                    initial="hidden"
+                    whileInView="show"
+                    // exit="hidden"
+                    variants={containerVariants}
+                    viewport={{ once: false, amount: 0.2 }}
+                    className="flex justify-between gap-16"
+                >
                     {projectSteps.map((step, index) => (
                         <ProjectStepCard
                             title={step.title}
@@ -68,13 +98,19 @@ export default function Home() {
                             numberColor="text-[#5f7b93]"
                         />
                     ))}
-                </div>
+                </motion.div>
             </section>
             <section className="relative min-h-screen w-full py-16 px-16 bg-[#0F1921] flex flex-col gap-8">
                 <h2 className="text-4xl font-bold">
                     Les étapes essentielles des ateliers
                 </h2>
-                <div className="flex justify-between gap-16">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="flex justify-between gap-16"
+                >
                     {workshopSteps.map((step, index) => (
                         <ProjectStepCard
                             title={step.title}
@@ -84,7 +120,7 @@ export default function Home() {
                             numberColor="text-[#0f1921]"
                         />
                     ))}
-                </div>
+                </motion.div>
             </section>
             <section className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8">
                 <h2 className="text-4xl font-bold">Formulaire de contact</h2>
