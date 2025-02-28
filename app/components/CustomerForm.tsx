@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CustomerInput } from "./CustomerInput";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 type CustomerData = {
     type: CustomerType;
@@ -32,9 +33,12 @@ export const CustomerForm = () => {
         phoneNumber: 0,
         message: "",
     });
+    const form = useRef<HTMLFormElement | null>(null);
 
     const handleChange = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+        event: React.ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
     ) => {
         setFormData({
             ...formData,
@@ -49,13 +53,46 @@ export const CustomerForm = () => {
         }));
     }, [customerType]);
 
-    const recordCustomer = (event: React.FormEvent<HTMLFormElement>) => {
+    const recordCustomer = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log("Enregistrement réussi.", formData);
+
+        if (form.current) {
+            try {
+                await emailjs.sendForm(
+                    "service_0kcylir",
+                    "template_z38n158",
+                    form.current,
+                    {
+                        publicKey: "-JT-yKMU32QLJoq9a",
+                    }
+                );
+
+                form.current?.reset();
+                setFormData({
+                    type: customerType,
+                    lastName: "",
+                    firstName: "",
+                    companyName: "",
+                    age: "",
+                    city: "",
+                    email: "",
+                    phoneNumber: 0,
+                    message: "",
+                });
+            } catch (error) {
+                console.error("FAILED...", error);
+                alert("Erreur lors de l'envoi du message.");
+            }
+        }
     };
 
     return (
-        <form onSubmit={recordCustomer} className="flex flex-col gap-4">
+        <form
+            ref={form}
+            onSubmit={recordCustomer}
+            className="flex flex-col gap-4"
+        >
             <div className="flex flex-col gap-2">
                 <p>Vous êtes: </p>
                 <div className="flex gap-4">

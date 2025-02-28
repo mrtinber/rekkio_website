@@ -1,14 +1,20 @@
 import React from "react";
 
 interface CustomerInputProps {
-    name: string, 
-    type: string, 
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void, 
-    required: boolean,
-    label: string,
+    name: string;
+    type: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    required: boolean;
+    label: string;
 }
 
-export const CustomerInput = ({name, type, onChange, required, label} : CustomerInputProps) => {
+export const CustomerInput = ({
+    name,
+    type,
+    onChange,
+    required,
+    label,
+}: CustomerInputProps) => {
     return (
         <div className="flex flex-col gap-2">
             <label htmlFor={name}>{label}</label>
@@ -16,7 +22,7 @@ export const CustomerInput = ({name, type, onChange, required, label} : Customer
                 type={type}
                 id={name}
                 name={name}
-                required= {required}
+                required={required}
                 onChange={onChange}
                 className="text-black px-2 p-1 rounded-md w-64"
             />

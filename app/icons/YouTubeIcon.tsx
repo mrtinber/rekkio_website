@@ -3,12 +3,7 @@ import React from "react";
 export const YouTubeIcon = () => {
     return (
         <svg width="36px" height="36px" viewBox="0 -3 20 20" version="1.1">
-            <g
-                stroke="none"
-                strokeWidth="1"
-                fill="none"
-                fillRule="evenodd"
-            >
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     transform="translate(-300.000000, -7442.000000)"
                     fill="currentColor"

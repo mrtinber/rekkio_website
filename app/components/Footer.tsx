@@ -15,8 +15,13 @@ export const Footer = () => {
                     <SocialBtn content="YouTube" />
                 </div>
             </div>
-            <div className="flex justify-center w-full">
-                <p>&copy; 2025 REKKIO. Tous droits réservés. &mdash; <span className="underline cursor-pointer">Politique des cookies</span></p>
+            <div className="flex justify-center w-full text-sm">
+                <p>
+                    &copy; 2025 REKKIO. Tous droits réservés. &mdash;{" "}
+                    <span className="underline cursor-pointer">
+                        Politique des cookies
+                    </span>
+                </p>
             </div>
         </footer>
     );

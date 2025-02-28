@@ -12,7 +12,6 @@ interface ProjectStepCardProps {
 const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-    // exit: { opacity: 0, y: 50, transition: { duration: 0.3 } },
 };
 
 export const ProjectStepCard = ({
@@ -24,7 +23,6 @@ export const ProjectStepCard = ({
     return (
         <motion.div
             variants={itemVariants}
-            // exit="hidden"
             className="flex flex-col gap-2 w-1/4"
         >
             <div

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Banner } from "./components/Banner";
 import { Footer } from "./components/Footer";
 import { ProjectStepCard } from "./components/ProjectStepCard";
@@ -22,8 +22,6 @@ const containerVariants = {
 };
 
 export default function Home() {
-
-
     return (
         <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
             <CookiesModal />
@@ -70,14 +68,6 @@ export default function Home() {
                             terminer la suite d’atelier en ayant participé à la
                             création du morceau et du processus de diffusion.
                         </p>
-                        {/* <p>
-                            Je propose également des ateliers uniques sur la
-                            manipulation d’instruments analogiques, dans un
-                            cadre occupationnel pour des structures de type
-                            établissement d'hébergement pour personnes âgées
-                            dépendantes ou des structures pour personnes en
-                            situation de handicap.
-                        </p> */}
                     </motion.div>
                 </div>
             </section>
@@ -88,7 +78,6 @@ export default function Home() {
                 <motion.div
                     initial="hidden"
                     whileInView="show"
-                    // exit="hidden"
                     variants={containerVariants}
                     viewport={{ once: false, amount: 0.2 }}
                     className="flex justify-between gap-16"
@@ -126,7 +115,10 @@ export default function Home() {
                     ))}
                 </motion.div>
             </section>
-            <section id="formSection" className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8">
+            <section
+                id="formSection"
+                className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8"
+            >
                 <h2 className="text-4xl font-bold">Formulaire de contact</h2>
                 <CustomerForm />
             </section>
