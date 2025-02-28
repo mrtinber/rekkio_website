@@ -126,7 +126,7 @@ export default function Home() {
                     ))}
                 </motion.div>
             </section>
-            <section className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8">
+            <section id="formSection" className="relative min-h-screen w-full py-16 px-16 bg-[#5F7B93] flex flex-col gap-8">
                 <h2 className="text-4xl font-bold">Formulaire de contact</h2>
                 <CustomerForm />
             </section>

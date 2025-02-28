@@ -2,6 +2,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Banner = () => {
+    const scrollToForm = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const anchor = document.getElementById("formSection");
+        anchor?.scrollIntoView({
+            behavior: "smooth",
+            block: "end",
+            inline: "nearest",
+        });
+    };
+
     return (
         <div className="relative w-full h-[100vh]">
             <Image
@@ -25,7 +35,11 @@ export const Banner = () => {
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1 }}
                         animate={{ x: 0 }}
-                        transition={{ ease: "easeOut", duration: 1.2, delay: 0.3 }}
+                        transition={{
+                            ease: "easeOut",
+                            duration: 1.2,
+                            delay: 0.3,
+                        }}
                         className="text-right"
                     >
                         REKKIO, c’est la contraction du japonais “TEKIO”, qui
@@ -39,7 +53,12 @@ export const Banner = () => {
                 <motion.button
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ ease: "easeOut", duration: 1.8, delay: 0.6 }}
+                    transition={{
+                        ease: "easeOut",
+                        duration: 1.8,
+                        delay: 0.6,
+                    }}
+                    onClick={scrollToForm}
                     className="text-black uppercase font-semibold relative bg-white py-2 px-8 hover:bg-transparent hover:text-white transition-all duration-300"
                 >
                     Travailler avec moi

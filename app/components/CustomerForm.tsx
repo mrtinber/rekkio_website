@@ -9,7 +9,7 @@ type CustomerData = {
     firstName: string;
     lastName: string;
     companyName: string;
-    age: number;
+    age: string;
     city: string;
     email: string;
     phoneNumber?: number;
@@ -26,7 +26,7 @@ export const CustomerForm = () => {
         lastName: "",
         firstName: "",
         companyName: "",
-        age: 0,
+        age: "",
         city: "",
         email: "",
         phoneNumber: 0,
@@ -34,7 +34,7 @@ export const CustomerForm = () => {
     });
 
     const handleChange = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         setFormData({
             ...formData,
@@ -111,13 +111,31 @@ export const CustomerForm = () => {
                             />
                         </div>
                         <div className="flex gap-12">
-                            <CustomerInput
-                                name="age"
-                                type="number"
-                                onChange={handleChange}
-                                label="Âge :"
-                                required
-                            />
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="age">Âge: </label>
+                                <select
+                                    name="age"
+                                    id="age"
+                                    className="text-black px-2 p-1 rounded-md w-64"
+                                    defaultValue=""
+                                    onChange={handleChange}
+                                    required
+                                >
+                                    <option value="" disabled hidden></option>
+                                    <option value="minor">
+                                        Moins de 18 ans
+                                    </option>
+                                    <option value="youngAdult">
+                                        18-30 ans
+                                    </option>
+                                    <option value="olderAdult">
+                                        30-45 ans
+                                    </option>
+                                    <option value="elder">
+                                        Plus de 45 ans
+                                    </option>
+                                </select>
+                            </div>
                             <CustomerInput
                                 name="city"
                                 type="text"
