@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Banner } from "./components/Banner";
 import { Footer } from "./components/Footer";
 import { ProjectStepCard } from "./components/ProjectStepCard";
 import { projectSteps, workshopSteps } from "./data/steps";
 import { CustomerForm } from "./components/CustomerForm";
 import { motion } from "framer-motion";
+import { CookiesModal } from "./components/CookiesModal";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -21,8 +22,11 @@ const containerVariants = {
 };
 
 export default function Home() {
+
+
     return (
         <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
+            <CookiesModal />
             <Banner />
             <section className="min-h-screen relative w-full py-16 bg-[#0F1921]">
                 <div className="relative z-10 flex gap-8 items-center px-16">
@@ -42,7 +46,7 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="text-justify"
                     >
-                        <p>
+                        <p className="text-lg">
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
                             spécialisé depuis 2019. Au travers de REKKIO, je
@@ -52,13 +56,13 @@ export default function Home() {
                             percevoir l’essence et de favoriser une ouverture
                             culturelle.
                         </p>
-                        <p>
+                        <p className="text-lg">
                             Je propose des ensembles d’ateliers qui s’adaptent à
                             chaque structure en fonction de leurs objectifs :
                             découverte culturelle, travail sur la vie
                             collective, sur la mixité sociale, etc.
                         </p>
-                        <p>
+                        <p className="text-lg">
                             Je propose des ensembles de 4 ateliers qui
                             permettent au groupe de créer un morceau de musique
                             complet et d’explorer chaque aspect du processus de
@@ -66,14 +70,14 @@ export default function Home() {
                             terminer la suite d’atelier en ayant participé à la
                             création du morceau et du processus de diffusion.
                         </p>
-                        <p>
+                        {/* <p>
                             Je propose également des ateliers uniques sur la
                             manipulation d’instruments analogiques, dans un
                             cadre occupationnel pour des structures de type
                             établissement d'hébergement pour personnes âgées
                             dépendantes ou des structures pour personnes en
                             situation de handicap.
-                        </p>
+                        </p> */}
                     </motion.div>
                 </div>
             </section>
