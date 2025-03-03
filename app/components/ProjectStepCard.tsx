@@ -7,6 +7,7 @@ interface ProjectStepCardProps {
     content: string;
     stepNumber: number;
     numberColor: string;
+    itemWidth: string;
 }
 
 const itemVariants = {
@@ -19,11 +20,12 @@ export const ProjectStepCard = ({
     content,
     stepNumber,
     numberColor,
+    itemWidth,
 }: ProjectStepCardProps) => {
     return (
         <motion.div
             variants={itemVariants}
-            className="flex flex-col gap-2 w-1/4"
+            className={`flex flex-col gap-2 ${itemWidth}`}
         >
             <div
                 className={clsx(

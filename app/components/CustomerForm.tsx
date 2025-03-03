@@ -131,7 +131,7 @@ export const CustomerForm = () => {
             >
                 {customerType === "particulier" ? (
                     <>
-                        <div className="flex gap-12">
+                        <div className="flex flex-col md:flex-row gap-2 md:gap-12">
                             <CustomerInput
                                 name="lastName"
                                 type="text"
@@ -147,13 +147,13 @@ export const CustomerForm = () => {
                                 required
                             />
                         </div>
-                        <div className="flex gap-12">
+                        <div className="flex flex-col md:flex-row gap-2 md:gap-12">
                             <div className="flex flex-col gap-2">
                                 <label htmlFor="age">Âge: </label>
                                 <select
                                     name="age"
                                     id="age"
-                                    className="text-black px-2 p-1 rounded-md w-64"
+                                    className="text-black px-2 p-1 rounded-md md:w-64"
                                     defaultValue=""
                                     onChange={handleChange}
                                     required
@@ -184,7 +184,7 @@ export const CustomerForm = () => {
                     </>
                 ) : (
                     <>
-                        <div className="flex gap-12">
+                        <div className="flex flex-col md:flex-row gap-12">
                             <CustomerInput
                                 name="companyName"
                                 type="text"
@@ -202,7 +202,7 @@ export const CustomerForm = () => {
                         </div>
                     </>
                 )}
-                <div className="flex gap-12">
+                <div className="flex flex-col md:flex-row gap-2 md:gap-12">
                     <CustomerInput
                         name="email"
                         type="email"
@@ -225,7 +225,7 @@ export const CustomerForm = () => {
                         name="message"
                         placeholder="Ecrivez vos demandes particulières ici."
                         onChange={handleChange}
-                        className="text-black px-2 p-1 rounded-md w-64"
+                        className="text-black px-2 p-1 rounded-md md:w-64"
                     />
                 </div>
             </motion.div>
