@@ -42,31 +42,24 @@ export default function Home() {
                             transition: { duration: 1.8 },
                         }}
                         viewport={{ once: true }}
-                        className="text-justify"
+                        className="text-justify flex flex-col gap-4"
                     >
-                        <p className="text-base lg:text-lg">
+                        <p className="text-base lg:text-2xl font-extralight">
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
                             spécialisé depuis 2019. Au travers de REKKIO, je
                             souhaite permettre à quiconque de pouvoir aborder le
-                            processus de création musicale afin de permettre à
-                            autrui de plonger dans la création artistique, d’en
-                            percevoir l’essence et de favoriser une ouverture
-                            culturelle.
+                            processus de création musicale afin de plonger dans
+                            la création artistique, d’en percevoir l’essence et
+                            de favoriser l’ouverture culturelle.
                         </p>
-                        <p className="text-base lg:text-lg">
-                            Je propose des ensembles d’ateliers qui s’adaptent à
-                            chaque structure en fonction de leurs objectifs :
-                            découverte culturelle, travail sur la vie
-                            collective, sur la mixité sociale, etc.
-                        </p>
-                        <p className="text-base lg:text-lg">
-                            Je propose des ensembles de 4 ateliers qui
-                            permettent au groupe de créer un morceau de musique
-                            complet et d’explorer chaque aspect du processus de
-                            création. Cela avec pour objectif que chacun puisse
-                            terminer la suite d’atelier en ayant participé à la
-                            création du morceau et du processus de diffusion.
+                        <p className="text-base lg:text-2xl font-extralight">
+                            Ces ateliers ont également pour but de favoriser un
+                            travail collaboratif, dans le respect des envies et
+                            des influences de chacun. Au travers de la pratique
+                            artistique, ces espaces de libertés visent également
+                            à offrir à tous la possibilité de s’aborder soi-même
+                            d’une autre façon.
                         </p>
                     </motion.div>
                 </div>

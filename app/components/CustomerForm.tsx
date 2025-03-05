@@ -231,7 +231,7 @@ export const CustomerForm = () => {
             </motion.div>
             <button
                 type="submit"
-                className="text-black mt-4 flex-none self-start uppercase font-semibold bg-white py-2 px-8 hover:bg-transparent hover:text-white transition-all duration-300"
+                className="text-[#5F7B93] mt-4 flex-none self-start uppercase font-semibold bg-white py-2 px-8 hover:bg-transparent hover:text-white transition-all duration-300"
             >
                 Soumettre le formulaire
             </button>

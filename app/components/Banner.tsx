@@ -43,10 +43,11 @@ export const Banner = () => {
                         className="text-right w-full text-sm md:text-base"
                     >
                         REKKIO, c’est la contraction du japonais “TEKIO”, qui
-                        signifie “adaptation” et du mot “Record” qui signifie
-                        “enregistrer”. L’objectif de REKKIO est de mettre en
+                        signifie “ADAPTATION” et du mot “RECORD” qui signifie
+                        “ENREGISTRER”. 
+                        L’objectif de REKKIO est de mettre en
                         place des ateliers de production musicale au sein
-                        d’entreprises ou de structures sociales auprès de
+                        d’entreprises ou de structures sociales, auprès de
                         groupes souhaitant explorer la création musicale.
                     </motion.p>
                 </div>
