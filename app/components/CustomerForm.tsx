@@ -230,7 +230,7 @@ export const CustomerForm = () => {
                     />
                 </div>
             </motion.div>
-            <Button />
+            <Button textContent="Soumettre le formulaire" />
         </form>
     );
 };

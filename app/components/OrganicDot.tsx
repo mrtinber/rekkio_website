@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface OrganicDotProps {
     fillColor: string;
@@ -19,7 +19,7 @@ export const OrganicDot = ({ fillColor }: OrganicDotProps) => {
         <svg
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-12 flex-shrink-0"
+            className="w-12 flex-shrink-0 self-start"
             style={{ transform: `rotate(${randomRotation}deg)` }}
         >
             <path

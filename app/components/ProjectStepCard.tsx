@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React from "react";
 import { motion } from "framer-motion";
 import { OrganicDot } from "./OrganicDot";

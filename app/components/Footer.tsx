@@ -7,7 +7,7 @@ export const Footer = () => {
             <div className="flex flex-col md:flex-row gap-4 w-full justify-between">
                 <div>
                     <p>Contact: Quentin LEBRETON</p>
-                    <p>@: rekkio@gmail.com</p>
+                    <a href="mailto:rekkiomusique@gmail.com">@: rekkiomusique@gmail.com</a>
                 </div>
                 <div className="flex gap-2">
                     <SocialBtn content="Instagram" />

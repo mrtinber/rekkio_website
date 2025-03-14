@@ -13,26 +13,32 @@ export default {
                 foreground: "var(--foreground)",
             },
 
+            fontFamily: {
+                sans: "var(--font-geist-sans), sans-serif",
+                mono: "var(--font-geist-mono), monospace",
+                oi: "var(--font-oi), cursive",
+            },
+
             keyframes: {
                 blob: {
                     "0%": {
-                      transform: "translate(0, 0) scale(1)",
+                        transform: "translate(0, 0) scale(1)",
                         rotate: "0deg",
                     },
                     "10%": {
-                      transform: "translate(30px, -50px) scale(1.1)",
+                        transform: "translate(30px, -50px) scale(1.1)",
                         rotate: "40deg",
                     },
                     "20%": {
-                      transform: "translate(-50px, 40px) scale(1.15)",
+                        transform: "translate(-50px, 40px) scale(1.15)",
                         rotate: "40deg",
                     },
                     "30%": {
-                      transform: "translate(40px, 50px) scale(1.1)",
+                        transform: "translate(40px, 50px) scale(1.1)",
                         rotate: "40deg",
                     },
                     "40%": {
-                      transform: "translate(-35px, -40px) scale(1.05)",
+                        transform: "translate(-35px, -40px) scale(1.05)",
                         rotate: "40deg",
                     },
                     "50%": {
@@ -47,8 +53,8 @@ export default {
                         rotate: "50%",
                     },
                     "80%": {
-                      transform: "translate(-40px, 50px) scale(0.85)",
-                      rotate: "60%",
+                        transform: "translate(-40px, 50px) scale(0.85)",
+                        rotate: "60%",
                     },
                     "90%": {
                         transform: "translate(45px, -30px) scale(0.9)",
@@ -60,7 +66,7 @@ export default {
             },
             animation: {
                 blob: "blob 48s infinite ease-in-out",
-                "blob-reverse": "blob 40s infinite ease-in-out reverse"
+                "blob-reverse": "blob 40s infinite ease-in-out reverse",
             },
         },
     },
