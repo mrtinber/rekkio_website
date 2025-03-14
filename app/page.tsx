@@ -83,7 +83,7 @@ export default function Home() {
                         <p>
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
-                            spécialisé depuis 2019. Au travers de REKKIO, je
+                            spécialisé depuis 2019. Au travers de <span className="font-semibold">REKKIO</span>, je
                             souhaite permettre à quiconque de pouvoir aborder le
                             processus de création musicale afin de plonger dans
                             la création artistique, d’en percevoir l’essence et
@@ -131,7 +131,7 @@ export default function Home() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="flex flex-col lg:flex-row justify-between gap-3"
+                    className="flex flex-col lg:grid lg:grid-cols-2 justify-between gap-3"
                 >
                     {workshopSteps.map((step, index) => (
                         <ProjectStepCard
@@ -139,7 +139,7 @@ export default function Home() {
                             content={step.content}
                             key={index}
                             bgColor={index}
-                            itemWidth="lg:w-1/5"
+                            itemWidth={index === workshopSteps.length - 1 && workshopSteps.length % 2 !== 0 ? "lg:col-span-2" : "lg:col-span-1"}
                         />
                     ))}
                 </motion.div>
@@ -148,7 +148,7 @@ export default function Home() {
                 id="formSection"
                 className="relative min-h-screen w-full py-16 px-8 md:px-16 bg-[#5F7B93] flex flex-col gap-8"
             >
-                <h2 className="flex items-center gap-4 text-4xl font-bold"><TbPhoneRinging/> Parlons de votre projet</h2>
+                <h2 className="flex items-center gap-4 text-4xl font-bold"><TbPhoneRinging className="animate-bounce"/> Parlons de votre projet</h2>
                 <CustomerForm />
             </section>
             <Footer />

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CustomerInput } from "./CustomerInput";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { Button } from "./Button";
 
 type CustomerData = {
     type: CustomerType;
@@ -98,7 +99,7 @@ export const CustomerForm = () => {
                 <div className="flex gap-4">
                     <button
                         type="button"
-                        className={`py-2 px-8 rounded-md ${
+                        className={`py-2 px-8 rounded-2xl ${
                             customerType === "particulier"
                                 ? "bg-white text-[#5F7B93]"
                                 : "bg-transparent border-white border-2 text-white"
@@ -109,7 +110,7 @@ export const CustomerForm = () => {
                     </button>
                     <button
                         type="button"
-                        className={`py-2 px-8 rounded-md ${
+                        className={`py-2 px-8 rounded-2xl ${
                             customerType === "structure"
                                 ? "bg-white text-[#5F7B93]"
                                 : "bg-transparent border-white border-2 text-white"
@@ -153,7 +154,7 @@ export const CustomerForm = () => {
                                 <select
                                     name="age"
                                     id="age"
-                                    className="text-black px-2 p-1 rounded-md md:w-64"
+                                    className="text-black px-4 p-2 rounded-full md:w-64 appearance-none"
                                     defaultValue=""
                                     onChange={handleChange}
                                     required
@@ -225,16 +226,11 @@ export const CustomerForm = () => {
                         name="message"
                         placeholder="Ecrivez vos demandes particulières ici."
                         onChange={handleChange}
-                        className="text-black px-2 p-1 rounded-md md:w-64"
+                        className="text-black px-4 p-2 rounded-2xl md:w-64"
                     />
                 </div>
             </motion.div>
-            <button
-                type="submit"
-                className="text-[#5F7B93] mt-4 flex-none self-start uppercase font-semibold bg-white py-2 px-8 hover:bg-transparent hover:text-white transition-all duration-300"
-            >
-                Soumettre le formulaire
-            </button>
+            <Button />
         </form>
     );
 };

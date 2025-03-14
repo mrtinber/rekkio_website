@@ -24,7 +24,7 @@ export const CustomerInput = ({
                 name={name}
                 required={required}
                 onChange={onChange}
-                className="text-black px-2 p-1 rounded-md md:w-64"
+                className="text-black px-4 p-2 rounded-full md:w-64"
             />
         </div>
     );

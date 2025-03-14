@@ -40,12 +40,12 @@ export const Banner = () => {
                             duration: 1.2,
                             delay: 0.3,
                         }}
-                        className="text-right w-full text-sm md:text-base"
+                        className="text-right w-full text-sm md:text-base font-light"
                     >
-                        REKKIO, c’est la contraction du japonais “TEKIO”, qui
-                        signifie “ADAPTATION” et du mot “RECORD” qui signifie
-                        “ENREGISTRER”. 
-                        L’objectif de REKKIO est de mettre en
+                        <span className="font-extrabold text-[#FA852D]">REKKIO</span>, c’est la contraction du japonais <span className="italic font-semibold uppercase">“TEKIō”</span> (<span className="italic">適応</span>), qui
+                        signifie <span className="italic font-semibold">“ADAPTATION”</span> et du mot <span className="italic font-semibold">“RECORD”</span> qui signifie
+                        <span className="italic font-semibold">“ENREGISTRER”</span>. 
+                        L’objectif de <span className="font-extrabold text-[#0296C6]">REKKIO</span> est de mettre en
                         place des ateliers de production musicale au sein
                         d’entreprises ou de structures sociales, auprès de
                         groupes souhaitant explorer la création musicale.
