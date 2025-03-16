@@ -92,7 +92,7 @@ export const CustomerForm = () => {
         <form
             ref={form}
             onSubmit={recordCustomer}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl p-8"
         >
             <div className="flex flex-col gap-2">
                 <p>Vous êtes: </p>
@@ -101,7 +101,7 @@ export const CustomerForm = () => {
                         type="button"
                         className={`py-2 px-8 rounded-2xl ${
                             customerType === "particulier"
-                                ? "bg-white text-[#5F7B93]"
+                                ? "bg-white text-[#0F1921]"
                                 : "bg-transparent border-white border-2 text-white"
                         }`}
                         onClick={() => setCustomerType("particulier")}
@@ -112,7 +112,7 @@ export const CustomerForm = () => {
                         type="button"
                         className={`py-2 px-8 rounded-2xl ${
                             customerType === "structure"
-                                ? "bg-white text-[#5F7B93]"
+                                ? "bg-white text-[#0F1921]"
                                 : "bg-transparent border-white border-2 text-white"
                         }`}
                         onClick={() => setCustomerType("structure")}
@@ -219,18 +219,20 @@ export const CustomerForm = () => {
                         required={false}
                     />
                 </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="message">Message :</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Ecrivez vos demandes particulières ici."
-                        onChange={handleChange}
-                        className="text-black px-4 p-2 rounded-2xl md:w-64"
-                    />
+                <div className="flex flex-col md:flex-row gap-2 md:gap-12 items-baseline">
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="message">Message :</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Ecrivez vos demandes particulières ici."
+                            onChange={handleChange}
+                            className="text-black px-4 p-2 rounded-2xl md:w-64"
+                        />
+                    </div>
+                    <Button textContent="Soumettre le formulaire" />
                 </div>
             </motion.div>
-            <Button textContent="Soumettre le formulaire" />
         </form>
     );
 };

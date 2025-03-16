@@ -27,41 +27,40 @@ export default function Home() {
         <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
             <CookiesModal />
             <Banner />
-            <section
-                className="min-h-screen relative w-full py-16 bg-[#0F1921]
-            "
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute w-full h-screen"
-                >
-                    <defs>
-                        <filter id="goo">
-                            <feGaussianBlur
-                                in="SourceGraphic"
-                                stdDeviation="50"
-                                result="blur"
-                            />
-                            <feColorMatrix
-                                in="blur"
-                                mode="matrix"
-                                values="1 0 0 0 0    0 1 0 0 0   0 0 1 0 0   0 0 0 180 -28"
-                                result="goo"
-                            />
-                            {/* <feBlend in="SourceGraphic" in2="goo" /> */}
-                        </filter>
-                    </defs>
-                </svg>
-                <div
-                    className="absolute w-full h-full flex items-center justify-center"
-                    style={{ filter: "url(#goo)" }}
-                >
-                    <div className="absolute right-[40%] top-[15%] h-[30%] w-[15%] bg-gradient-to-br from-[#0373A6] via-[#0296C6] to-[#A3DAF1] rounded-full animate-blob blur-[10px]"></div>
-                    <div className="absolute left-[40%] top-[20%] h-[40%] w-[20%] bg-gradient-to-br from-[#05739E] via-[#02324C] to-[#0F1921] rounded-full animate-blob-reverse blur-[10px]"></div>
-                    <div className="absolute left-[30%] top-[5%] h-[30%] w-[15%] bg-gradient-to-br from-[#FFD8A3] via-[#FA852D] to-[#EA4714] rounded-full animate-blob blur-[10px]"></div>
+            <main className="min-h-screen relative w-full flex flex-col gap-32 bg-[#0F1921]">
+                <div className="sticky top-0 w-full z-0">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="absolute w-full h-screen"
+                    >
+                        <defs>
+                            <filter id="goo">
+                                <feGaussianBlur
+                                    in="SourceGraphic"
+                                    stdDeviation="50"
+                                    result="blur"
+                                />
+                                <feColorMatrix
+                                    in="blur"
+                                    mode="matrix"
+                                    values="1 0 0 0 0    0 1 0 0 0   0 0 1 0 0   0 0 0 180 -28"
+                                    result="goo"
+                                />
+                                {/* <feBlend in="SourceGraphic" in2="goo" /> */}
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div
+                        className="absolute w-full h-screen flex items-center justify-center"
+                        style={{ filter: "url(#goo)" }}
+                    >
+                        <div className="absolute right-[30%] top-[35%] h-[35%] w-[20%] bg-gradient-to-br from-[#0373A6] via-[#0296C6] to-[#A3DAF1] rounded-full animate-blob blur-[10px]"></div>
+                        <div className="absolute left-[40%] top-[40%] h-[40%] w-[25%] bg-gradient-to-br from-[#05739E] via-[#02324C] to-[#0F1921] rounded-full animate-blob-reverse blur-[10px]"></div>
+                        <div className="absolute left-[30%] top-[25%] h-[35%] w-[20%] bg-gradient-to-br from-[#FFD8A3] via-[#FA852D] to-[#EA4714] rounded-full animate-blob blur-[10px]"></div>
+                    </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col lg:flex-row gap-8 items-center mx-8 md:mx-16 backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl">
+                <section className="relative z-10 flex flex-col lg:flex-row gap-8 items-center w-3/4 m-auto backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl">
                     <Image
                         src="/profile.jpg"
                         alt="Photo de profil"
@@ -77,13 +76,14 @@ export default function Home() {
                             transition: { duration: 1.8 },
                         }}
                         viewport={{ once: true }}
-                        className="text-justify flex flex-col gap-4 pr-8 text-base lg:text-xl font-extralight"
+                        className="text-justify flex flex-col gap-4 pr-8 text-base lg:text-lg font-extralight"
                     >
-                        <h2 className="text-5xl font-oi">Qui suis-je?</h2>
+                        <h2 className="text-4xl font-oi">Qui suis-je?</h2>
                         <p>
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
-                            spécialisé depuis 2019. Au travers de <span className="font-semibold">REKKIO</span>, je
+                            spécialisé depuis 2019. Au travers de{" "}
+                            <span className="font-semibold">REKKIO</span>, je
                             souhaite permettre à quiconque de pouvoir aborder le
                             processus de création musicale afin de plonger dans
                             la création artistique, d’en percevoir l’essence et
@@ -98,13 +98,10 @@ export default function Home() {
                             d’une autre façon.
                         </p>
                     </motion.div>
-                </div>
-            </section>
-            <section className="relative min-h-screen w-full py-16 px-8 md:px-16 bg-[#5F7B93]">
-                <div className="w-2/3 m-auto flex flex-col gap-8">
-                    {/* <h2 className="text-3xl font-oi tracking-wider"> */}
-                    <h2 className="text-4xl font-bold">
-                        Les étapes de mise en place du projet
+                </section>
+                <section className="w-3/4 m-auto flex flex-col gap-8">
+                    <h2 className="text-4xl font-oi tracking-wide z-20">
+                        La mise en place du projet
                     </h2>
                     <motion.div
                         initial="hidden"
@@ -123,12 +120,10 @@ export default function Home() {
                             />
                         ))}
                     </motion.div>
-                </div>
-            </section>
-            <section className="relative min-h-screen w-full py-16 px-8 md:px-16 bg-[#0F1921]">
-                <div className="w-2/3 m-auto flex flex-col gap-8">
-                    {/* <h2 className="text-3xl font-oi tracking-wider"> */}
-                    <h2 className="text-4xl font-bold">
+                </section>
+
+                <section className="w-3/4 m-auto flex flex-col gap-8">
+                    <h2 className="text-4xl font-oi tracking-wide z-20">
                         Les ateliers
                     </h2>
                     <motion.div
@@ -144,22 +139,29 @@ export default function Home() {
                                 content={step.content}
                                 key={index}
                                 bgColor={index}
-                                itemWidth={index === workshopSteps.length - 1 && workshopSteps.length % 2 !== 0 ? "lg:col-span-2" : "lg:col-span-1"}
+                                itemWidth={
+                                    index === workshopSteps.length - 1 &&
+                                    workshopSteps.length % 2 !== 0
+                                        ? "lg:col-span-2"
+                                        : "lg:col-span-1"
+                                }
                             />
                         ))}
                     </motion.div>
-                </div>
-            </section>
-            <section
-                id="formSection"
-                className="relative min-h-screen w-full py-16 px-8 md:px-16 bg-[#5F7B93]"
-            >
-                <div className="w-2/3 m-auto flex flex-col gap-8">
-                    {/* <h2 className="flex items-center gap-4 text-3xl font-oi tracking-wider">Parlons de votre projet</h2> */}
-                    <h2 className="flex items-center gap-4 text-4xl font-bold"><TbPhoneRinging className="animate-bounce"/> Parlons de votre projet</h2>
-                    <CustomerForm />
-                </div>
-            </section>
+                </section>
+                <section
+                    id="formSection"
+                    className="relative w-full bg-transparent pb-16"
+                >
+                    <div className="w-3/4 m-auto flex flex-col gap-8">
+                        <h2 className="flex items-center gap-4 text-4xl font-oi tracking-wide">
+                            Parlons de votre projet
+                        </h2>
+                        {/* <TbPhoneRinging className="animate-bounce" /> */}
+                        <CustomerForm />
+                    </div>
+                </section>
+            </main>
             <Footer />
         </div>
     );

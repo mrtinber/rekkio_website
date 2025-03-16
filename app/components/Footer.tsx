@@ -3,7 +3,7 @@ import { SocialBtn } from "./SocialBtn";
 
 export const Footer = () => {
     return (
-        <footer className="flex flex-wrap items-center justify-between py-4 px-8 md:px-16 gap-4">
+        <footer className="flex flex-wrap items-center justify-between py-4 px-8 md:px-16 gap-4 bg-black relative z-20">
             <div className="flex flex-col md:flex-row gap-4 w-full justify-between">
                 <div>
                     <p>Contact: Quentin LEBRETON</p>
