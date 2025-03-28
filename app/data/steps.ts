@@ -15,7 +15,7 @@ export const projectSteps = [
             "J’interviens au sein de la structure sur les ateliers en présentiel, accompagné par un membre de la structure.",
     },
     {
-        title: "Fin des ateliers et remise de la production au groupe",
+        title: "Fin des ateliers",
         content:
             "Les ateliers se clôturent avec la production d’un morceau de musique. Il est possible de programmer un temps de restitution pour clôturer le projet.",
     },

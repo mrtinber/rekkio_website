@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CustomerInput } from "./CustomerInput";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Button } from "./Button";
+import { SubmitButton } from "./SubmitButton";
 
 type CustomerData = {
     type: CustomerType;
@@ -89,7 +89,7 @@ export const CustomerForm = () => {
     };
 
     return (
-        <div className="flex gap-8 backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl p-8">
+        <div className="flex flex-col-reverse xl:flex-row gap-8 backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl p-8">
             <form
                 ref={form}
                 onSubmit={recordCustomer}
@@ -97,10 +97,10 @@ export const CustomerForm = () => {
             >
                 <div className="flex flex-col gap-2">
                     <p>Vous êtes: </p>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 text-sm sm:text-base m-auto sm:m-0">
                         <button
                             type="button"
-                            className={`py-2 px-8 rounded-2xl ${
+                            className={`py-2 px-4 md:px-8 rounded-2xl ${
                                 customerType === "particulier"
                                     ? "bg-white text-[#0F1921]"
                                     : "bg-transparent border-white border-2 text-white"
@@ -111,7 +111,7 @@ export const CustomerForm = () => {
                         </button>
                         <button
                             type="button"
-                            className={`py-2 px-8 rounded-2xl ${
+                            className={`py-2 px-2 md:px-8 rounded-2xl ${
                                 customerType === "structure"
                                     ? "bg-white text-[#0F1921]"
                                     : "bg-transparent border-white border-2 text-white"
@@ -133,7 +133,7 @@ export const CustomerForm = () => {
                 >
                     {customerType === "particulier" ? (
                         <>
-                            <div className="flex flex-col md:flex-row gap-2 md:gap-12">
+                            <div className="flex flex-col lg:flex-row gap-2 lg:gap-12">
                                 <CustomerInput
                                     name="lastName"
                                     type="text"
@@ -149,13 +149,13 @@ export const CustomerForm = () => {
                                     required
                                 />
                             </div>
-                            <div className="flex flex-col md:flex-row gap-2 md:gap-12">
+                            <div className="flex flex-col lg:flex-row gap-2 lg:gap-12">
                                 <div className="flex flex-col gap-2">
                                     <label htmlFor="age">Âge: </label>
                                     <select
                                         name="age"
                                         id="age"
-                                        className="text-black px-4 p-2 rounded-full md:w-64 appearance-none"
+                                        className="text-black px-4 p-2 rounded-full lg:w-64 appearance-none"
                                         defaultValue=""
                                         onChange={handleChange}
                                         required
@@ -190,7 +190,7 @@ export const CustomerForm = () => {
                         </>
                     ) : (
                         <>
-                            <div className="flex flex-col md:flex-row gap-12">
+                            <div className="flex flex-col lg:flex-row gap-2 lg:gap-12">
                                 <CustomerInput
                                     name="companyName"
                                     type="text"
@@ -208,7 +208,7 @@ export const CustomerForm = () => {
                             </div>
                         </>
                     )}
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-12">
+                    <div className="flex flex-col lg:flex-row gap-2 lg:gap-12">
                         <CustomerInput
                             name="email"
                             type="email"
@@ -224,7 +224,7 @@ export const CustomerForm = () => {
                             required={false}
                         />
                     </div>
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-12 items-baseline">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="message">Message :</label>
                             <textarea
@@ -232,19 +232,30 @@ export const CustomerForm = () => {
                                 name="message"
                                 placeholder="Ecrivez vos demandes particulières ici."
                                 onChange={handleChange}
-                                className="text-black px-4 p-2 rounded-2xl md:w-64"
+                                className="text-black px-4 p-2 rounded-2xl lg:w-64"
                             />
                         </div>
-                        <Button textContent="Soumettre le formulaire" />
+                        <SubmitButton
+                            children={
+                                <>
+                                    <span className="hidden sm:inline">
+                                        Soumettre le formulaire
+                                    </span>
+                                    <span className="inline sm:hidden">
+                                        Envoyer
+                                    </span>
+                                </>
+                            }
+                        />
                     </div>
                 </motion.div>
             </form>
             {customerType === "particulier" ? (
-                <div className="flex flex-col gap-2 justify-center">
+                <div className="flex flex-col gap-4 md:gap-2 justify-center">
                     <h3 className="text-2xl font-semibold">
                         Les ateliers individuels
                     </h3>
-                    <p className="text-justify font-light">
+                    <p className="text-left md:text-justify font-light">
                         Les ateliers individuels sont facturés{" "}
                         <span className="font-bold">35€/heure</span> par atelier
                         sur la base d’ateliers de 2 heures. <br />
@@ -257,11 +268,11 @@ export const CustomerForm = () => {
                     </div>
                 </div>
             ) : (
-                <div className="flex flex-col gap-2 justify-center">
+                <div className="flex flex-col gap-4 md:gap-2 justify-center">
                     <h3 className="text-2xl font-semibold">
                         Les ateliers collectifs
                     </h3>
-                    <p className="text-justify font-light">
+                    <p className="text-left md:text-justify font-light">
                         Les ateliers collectifs sont facturés après évaluation
                         du projet avec la structure, en fonction des objectifs.
                     </p>

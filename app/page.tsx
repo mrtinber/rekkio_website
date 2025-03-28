@@ -26,7 +26,7 @@ export default function Home() {
         <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
             <CookiesModal />
             <Banner />
-            <main className="min-h-screen relative w-full flex flex-col gap-32 bg-[#0F1921]">
+            <main className="min-h-screen relative w-full flex flex-col gap-24 lg:gap-32 bg-[#0F1921]">
                 <div className="sticky top-0 w-full z-0">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -59,13 +59,13 @@ export default function Home() {
                     </div>
                 </div>
 
-                <section className="relative z-10 flex flex-col lg:flex-row gap-8 items-center w-3/4 m-auto backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl">
+                <section className="relative z-10 flex flex-col md:flex-row gap-8 items-center w-5/6 lg:w-3/4 m-auto backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl">
                     <Image
                         src="/profile.jpg"
                         alt="Photo de profil"
                         width={350}
-                        height={150}
-                        className="rounded-l-3xl"
+                        height={350}
+                        className="rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none w-full md:w-2/5 lg:h-screen sm:h-[800px] sm:object-cover"
                     />
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -75,9 +75,9 @@ export default function Home() {
                             transition: { duration: 1.8 },
                         }}
                         viewport={{ once: true }}
-                        className="text-justify flex flex-col gap-4 pr-8 text-base lg:text-lg font-extralight"
+                        className="lg:text-justify flex flex-col gap-4 px-6 pb-6 lg:py-6 lg:pr-8 text-base lg:text-lg font-extralight"
                     >
-                        <h2 className="text-4xl font-oi">Qui suis-je?</h2>
+                        <h2 className="text-3xl lg:text-4xl font-oi">Qui suis-je?</h2>
                         <p>
                             Je suis producteur de musiques électroniques depuis
                             10 ans. Je suis également diplômé d’état d’éducateur
@@ -98,7 +98,7 @@ export default function Home() {
                         </p>
                     </motion.div>
                 </section>
-                <section className="w-3/4 m-auto flex flex-col gap-8">
+                <section className="w-5/6 lg:w-3/4 m-auto flex flex-col gap-8">
                     <h2 className="text-4xl font-oi tracking-wide z-20">
                         La mise en place du projet
                     </h2>
@@ -121,7 +121,7 @@ export default function Home() {
                     </motion.div>
                 </section>
 
-                <section className="w-3/4 m-auto flex flex-col gap-8">
+                <section className="w-5/6 lg:w-3/4 m-auto flex flex-col gap-8">
                     <h2 className="text-4xl font-oi tracking-wide z-20">
                         Les ateliers
                     </h2>
@@ -152,7 +152,7 @@ export default function Home() {
                     id="formSection"
                     className="relative w-full bg-transparent pb-16"
                 >
-                    <div className="w-3/4 m-auto flex flex-col gap-8">
+                    <div className="w-5/6 lg:w-3/4 m-auto flex flex-col gap-8">
                         <h2 className="flex items-center gap-4 text-4xl font-oi tracking-wide">
                             Parlons de votre projet
                         </h2>

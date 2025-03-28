@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "./Button";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 export const Banner = () => {
     const scrollToForm = (event: React.MouseEvent<HTMLButtonElement>) => {

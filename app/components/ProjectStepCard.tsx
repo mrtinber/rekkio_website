@@ -35,14 +35,14 @@ export const ProjectStepCard = ({
     return (
         <motion.div
             variants={itemVariants}
-            className={`flex flex-col gap-2 backdrop-blur-lg bg-white/5 rounded-3xl px-8 py-6 ${itemWidth}`}
+            className={`flex flex-col gap-2 backdrop-blur-lg bg-white/5 rounded-3xl px-6 md:px-8 py-6 ${itemWidth}`}
         >
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-col md:flex-row gap-4 md:items-center">
                 <OrganicDot fillColor={chooseColor(bgColor)} />
 
                 <h3 className="font-semibold text-2xl">{title}</h3>
             </div>
-            <p className="text-justify font-light">{content}</p>
+            <p className="text-left md:text-justify font-light">{content}</p>
         </motion.div>
     );
 };
