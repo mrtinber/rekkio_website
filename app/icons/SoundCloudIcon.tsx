@@ -4,8 +4,8 @@ export const SoundCloudIcon = () => {
     return (
         <svg
             fill="currentColor"
-            height="36px"
-            width="36px"
+            height="24px"
+            width="24px"
             version="1.1"
             id="Layer_1"
             viewBox="0 0 300 300"

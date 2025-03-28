@@ -128,7 +128,7 @@ export const CustomerForm = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 1 }}
                     className="flex flex-col gap-2"
                 >
                     {customerType === "particulier" ? (
@@ -251,7 +251,7 @@ export const CustomerForm = () => {
                         En fonction du lieu de déplacement ce tarif peut être
                         amené à être augmenté ou réduit.
                     </p>
-                    <div className="flex w-full gap-2 items-end">
+                    <div className="flex w-full gap-2 items-end justify-end">
                         <p className="italic text-sm">Sur devis.</p>
                         <span className="text-5xl font-bold">35€/h.</span>
                     </div>
@@ -265,7 +265,7 @@ export const CustomerForm = () => {
                         Les ateliers collectifs sont facturés après évaluation
                         du projet avec la structure, en fonction des objectifs.
                     </p>
-                    <div className="flex w-full gap-2 items-end">
+                    <div className="flex w-full gap-2 items-end justify-end">
                         <p className="italic text-sm">Sur devis.</p>
                         <span className="text-5xl font-bold">--€/h.</span>
                     </div>

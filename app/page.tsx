@@ -9,7 +9,6 @@ import { projectSteps, workshopSteps } from "./data/steps";
 import { CustomerForm } from "./components/CustomerForm";
 import { motion } from "framer-motion";
 import { CookiesModal } from "./components/CookiesModal";
-import { TbPhoneRinging } from "react-icons/tb";
 
 const containerVariants = {
     hidden: { opacity: 0 },
