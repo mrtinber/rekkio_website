@@ -1,5 +1,6 @@
 import React from "react";
 import { SocialBtn } from "./SocialBtn";
+import Link from "next/link";
 
 export const Footer = () => {
     return (
@@ -24,8 +25,10 @@ export const Footer = () => {
                 <div className="flex justify-center w-full text-sm">
                     <p>
                         &copy; 2025 REKKIO. Tous droits réservés. &mdash;{" "}
+                        <Link href="https://www.instagram.com/keenan.bl?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="underline cursor-pointer hover:no-underline">Crédits photos</Link>
+                        {" "}&mdash;{" "}
                         <span className="underline cursor-pointer hover:no-underline">
-                            Politique des cookies
+                            Politique des cookies 
                         </span>
                     </p>
                 </div>

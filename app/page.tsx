@@ -65,7 +65,7 @@ export default function Home() {
                         alt="Photo de profil"
                         width={350}
                         height={350}
-                        className="rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none w-full md:w-2/5 lg:h-screen sm:h-[800px] sm:object-cover"
+                        className="rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none w-full md:w-2/5 lg:h-3/4 sm:h-[800px] sm:object-cover"
                     />
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}

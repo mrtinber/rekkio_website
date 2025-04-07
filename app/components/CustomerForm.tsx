@@ -224,7 +224,7 @@ export const CustomerForm = () => {
                             required={false}
                         />
                     </div>
-                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-stretch lg:items-baseline">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="message">Message :</label>
                             <textarea
@@ -263,7 +263,7 @@ export const CustomerForm = () => {
                         amené à être augmenté ou réduit.
                     </p>
                     <div className="flex w-full gap-2 items-end justify-end">
-                        <p className="italic text-sm">Sur devis.</p>
+                        {/* <p className="italic text-sm">Sur devis.</p> */}
                         <span className="text-5xl font-bold">35€/h.</span>
                     </div>
                 </div>
