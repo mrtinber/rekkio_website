@@ -25,6 +25,7 @@ export const CustomerInput = ({
                 required={required}
                 onChange={onChange}
                 className="text-black px-4 p-2 rounded-full lg:w-64"
+                aria-required={required ? "true" : "false"}
             />
         </div>
     );

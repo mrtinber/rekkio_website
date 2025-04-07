@@ -6,6 +6,7 @@ export const BackgroundBlob = () => {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="absolute w-full h-screen"
+                aria-hidden="true"
             >
                 <defs>
                     <filter id="goo">
@@ -20,7 +21,6 @@ export const BackgroundBlob = () => {
                             values="1 0 0 0 0    0 1 0 0 0   0 0 1 0 0   0 0 0 180 -28"
                             result="goo"
                         />
-                        {/* <feBlend in="SourceGraphic" in2="goo" /> */}
                     </filter>
                 </defs>
             </svg>

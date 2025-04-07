@@ -35,6 +35,7 @@ export const CustomerForm = () => {
         message: "",
     });
     const form = useRef<HTMLFormElement | null>(null);
+    const [formSuccess, setFormSuccess] = useState(false);
 
     const handleChange = (
         event: React.ChangeEvent<
@@ -81,6 +82,8 @@ export const CustomerForm = () => {
                     phoneNumber: 0,
                     message: "",
                 });
+
+                setFormSuccess(true);
             } catch (error) {
                 console.error("FAILED...", error);
                 alert("Erreur lors de l'envoi du message.");
@@ -100,7 +103,12 @@ export const CustomerForm = () => {
                     <div className="flex gap-4 text-sm sm:text-base m-auto sm:m-0">
                         <button
                             type="button"
-                            className={`py-2 px-4 md:px-8 rounded-2xl ${
+                            aria-pressed={
+                                customerType === "particulier"
+                                    ? "true"
+                                    : "false"
+                            }
+                            className={`py-2 px-4 md:px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-[#FA852D] focus:ring-opacity-50 ${
                                 customerType === "particulier"
                                     ? "bg-white text-[#0F1921]"
                                     : "bg-transparent border-white border-2 text-white"
@@ -111,7 +119,10 @@ export const CustomerForm = () => {
                         </button>
                         <button
                             type="button"
-                            className={`py-2 px-2 md:px-8 rounded-2xl ${
+                            aria-pressed={
+                                customerType === "structure" ? "true" : "false"
+                            }
+                            className={`py-2 px-2 md:px-8 rounded-2xl focus:outline-none focus:ring-4 focus:ring-[#FA852D] focus:ring-opacity-50 ${
                                 customerType === "structure"
                                     ? "bg-white text-[#0F1921]"
                                     : "bg-transparent border-white border-2 text-white"
@@ -250,36 +261,44 @@ export const CustomerForm = () => {
                     </div>
                 </motion.div>
             </form>
-            {customerType === "particulier" ? (
-                <div className="flex flex-col gap-4 md:gap-2 justify-center">
-                    <h3 className="text-2xl font-semibold">
-                        Les ateliers individuels
-                    </h3>
-                    <p className="text-left md:text-justify font-light">
-                        Les ateliers individuels sont facturés{" "}
-                        <span className="font-bold">35€/heure</span> par atelier
-                        sur la base d’ateliers de 2 heures. <br />
-                        En fonction du lieu de déplacement ce tarif peut être
-                        amené à être augmenté ou réduit.
-                    </p>
-                    <div className="flex w-full gap-2 items-end justify-end">
-                        <span className="text-5xl font-bold">35€/h.</span>
-                    </div>
-                </div>
-            ) : (
-                <div className="flex flex-col gap-4 md:gap-2 justify-center">
-                    <h3 className="text-2xl font-semibold">
-                        Les ateliers collectifs
-                    </h3>
-                    <p className="text-left md:text-justify font-light">
-                        Les ateliers collectifs sont facturés après évaluation
-                        du projet avec la structure, en fonction des objectifs.
-                    </p>
-                    <div className="flex w-full gap-2 items-end justify-end">
-                        <p className="italic text-sm">Sur devis.</p>
-                        <span className="text-5xl font-bold">--€/h.</span>
-                    </div>
-                </div>
+            <div className="flex flex-col gap-4 md:gap-2 justify-center">
+                {customerType === "particulier" ? (
+                    <>
+                        <h3 className="text-2xl font-semibold">
+                            Les ateliers individuels
+                        </h3>
+                        <p className="text-left md:text-justify font-light">
+                            Les ateliers individuels sont facturés{" "}
+                            <span className="font-bold">35€/heure</span> par
+                            atelier sur la base d’ateliers de 2 heures. <br />
+                            En fonction du lieu de déplacement ce tarif peut
+                            être amené à être augmenté ou réduit.
+                        </p>
+                        <div className="flex w-full gap-2 items-end justify-end">
+                            <span className="text-5xl font-bold">35€/h.</span>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <h3 className="text-2xl font-semibold">
+                            Les ateliers collectifs
+                        </h3>
+                        <p className="text-left md:text-justify font-light">
+                            Les ateliers collectifs sont facturés après
+                            évaluation du projet avec la structure, en fonction
+                            des objectifs.
+                        </p>
+                        <div className="flex w-full gap-2 items-end justify-end">
+                            <p className="italic text-sm">Sur devis.</p>
+                            <span className="text-5xl font-bold">--€/h.</span>
+                        </div>
+                    </>
+                )}
+            </div>
+            {formSuccess && (
+                <p className="absolute italic text-right [#FA852D] right-8 bottom-8">
+                    Le formulaire a bien été envoyé, merci !
+                </p>
             )}
         </div>
     );

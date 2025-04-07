@@ -7,7 +7,7 @@ export const IntroSection = () => {
         <section className="relative z-10 flex flex-col md:flex-row gap-8 items-center w-5/6 lg:w-3/4 m-auto backdrop-blur-lg bg-white/5 rounded-3xl shadow-xl">
             <Image
                 src="/profile.jpg"
-                alt="Photo de profil"
+                alt="Photo de Quentin Lebreton, fondateur de Rekkio"
                 width={350}
                 height={350}
                 className="rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none w-full md:w-2/5 lg:h-3/4 sm:h-[800px] sm:object-cover"

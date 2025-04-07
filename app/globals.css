@@ -12,3 +12,11 @@ body {
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+    input:focus-visible, select:focus-visible, a:focus-visible, textarea:focus-visible {
+        outline: none; 
+        box-shadow:  0 0 0 4px rgba(250, 133, 45, 0.5);
+        transition: box-shadow 0.2s ease-in-out;
+    }
+}
