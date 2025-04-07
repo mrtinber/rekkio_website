@@ -12,7 +12,7 @@ export const OrganicDot = ({ fillColor }: OrganicDotProps) => {
     }, []);
 
     if (randomRotation === null) {
-        return null; // Retourne null ou un indicateur de chargement si nécessaire
+        return null;
     }
 
     return (

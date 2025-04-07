@@ -7,7 +7,7 @@ export const Banner = () => {
         const anchor = document.getElementById("formSection");
         anchor?.scrollIntoView({
             behavior: "smooth",
-            block: "end",
+            block: "center",
             inline: "nearest",
         });
     };

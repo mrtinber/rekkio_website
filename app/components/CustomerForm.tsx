@@ -124,7 +124,7 @@ export const CustomerForm = () => {
                 </div>
 
                 <motion.div
-                    key={customerType} // Change de clé à chaque changement d'état, forçant une réanimation
+                    key={customerType}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -263,7 +263,6 @@ export const CustomerForm = () => {
                         amené à être augmenté ou réduit.
                     </p>
                     <div className="flex w-full gap-2 items-end justify-end">
-                        {/* <p className="italic text-sm">Sur devis.</p> */}
                         <span className="text-5xl font-bold">35€/h.</span>
                     </div>
                 </div>
