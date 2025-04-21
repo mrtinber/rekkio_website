@@ -42,7 +42,7 @@ export const CookiesModal = () => {
                 <p className="text-black pt-4">
                     Nous utilisons des cookies pour améliorer votre expérience
                     sur notre site. En poursuivant votre navigation, vous
-                    acceptez l'utilisation des cookies.{"  "}
+                    acceptez l&apos;utilisation des cookies.{"  "}
                     <a href="/politique-de-cookies" className="underline">
                         En savoir plus
                     </a>

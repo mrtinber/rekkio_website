@@ -246,18 +246,12 @@ export const CustomerForm = () => {
                                 className="text-black px-4 p-2 rounded-2xl lg:w-64"
                             />
                         </div>
-                        <SubmitButton
-                            children={
-                                <>
-                                    <span className="hidden sm:inline">
-                                        Soumettre le formulaire
-                                    </span>
-                                    <span className="inline sm:hidden">
-                                        Envoyer
-                                    </span>
-                                </>
-                            }
-                        />
+                        <SubmitButton>
+                            <span className="hidden sm:inline">
+                                Soumettre le formulaire
+                            </span>
+                            <span className="inline sm:hidden">Envoyer</span>
+                        </SubmitButton>
                     </div>
                 </motion.div>
             </form>
