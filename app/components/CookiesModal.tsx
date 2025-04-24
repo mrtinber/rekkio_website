@@ -43,7 +43,7 @@ export const CookiesModal = () => {
                     Nous utilisons des cookies pour améliorer votre expérience
                     sur notre site. En poursuivant votre navigation, vous
                     acceptez l&apos;utilisation des cookies.{"  "}
-                    <a href="/politique-de-cookies" className="underline">
+                    <a href="/cookies" className="underline">
                         En savoir plus
                     </a>
                     .

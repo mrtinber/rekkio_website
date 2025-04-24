@@ -14,7 +14,7 @@ type CustomerData = {
     age: string;
     city: string;
     email: string;
-    phoneNumber?: number;
+    phoneNumber?: string;
     message?: string;
 };
 
@@ -31,7 +31,7 @@ export const CustomerForm = () => {
         age: "",
         city: "",
         email: "",
-        phoneNumber: 0,
+        phoneNumber: "",
         message: "",
     });
     const form = useRef<HTMLFormElement | null>(null);
@@ -42,10 +42,13 @@ export const CustomerForm = () => {
             HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
         >
     ) => {
-        setFormData({
+        const updatedData = {
             ...formData,
             [event.target.name]: event.target.value,
-        });
+        };
+        setFormData(updatedData);
+
+        sessionStorage.setItem("autoFillForm", JSON.stringify(updatedData));
     };
 
     useEffect(() => {
@@ -55,9 +58,19 @@ export const CustomerForm = () => {
         }));
     }, [customerType]);
 
+    useEffect(() => {
+        const savedData = sessionStorage.getItem("autoFillForm");
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            setFormData((prev) => ({
+                ...prev,
+                ...parsedData,
+            }));
+        }
+    }, []);
+
     const recordCustomer = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log("Enregistrement réussi.", formData);
 
         if (form.current) {
             try {
@@ -79,11 +92,12 @@ export const CustomerForm = () => {
                     age: "",
                     city: "",
                     email: "",
-                    phoneNumber: 0,
+                    phoneNumber: "",
                     message: "",
                 });
 
                 setFormSuccess(true);
+                sessionStorage.removeItem("autoFillForm");
             } catch (error) {
                 console.error("FAILED...", error);
                 alert("Erreur lors de l'envoi du message.");
@@ -150,6 +164,7 @@ export const CustomerForm = () => {
                                     type="text"
                                     onChange={handleChange}
                                     label="Nom :"
+                                    value={formData.lastName || ""}
                                     required
                                 />
                                 <CustomerInput
@@ -157,6 +172,7 @@ export const CustomerForm = () => {
                                     type="text"
                                     onChange={handleChange}
                                     label="Prénom :"
+                                    value={formData.firstName || ""}
                                     required
                                 />
                             </div>
@@ -167,7 +183,7 @@ export const CustomerForm = () => {
                                         name="age"
                                         id="age"
                                         className="text-black px-4 p-2 rounded-full lg:w-64 appearance-none"
-                                        defaultValue=""
+                                        value={formData.age || ""}
                                         onChange={handleChange}
                                         required
                                     >
@@ -195,6 +211,7 @@ export const CustomerForm = () => {
                                     type="text"
                                     onChange={handleChange}
                                     label="Ville de résidence :"
+                                    value={formData.city || ""}
                                     required
                                 />
                             </div>
@@ -207,6 +224,7 @@ export const CustomerForm = () => {
                                     type="text"
                                     onChange={handleChange}
                                     label="Nom de la structure :"
+                                    value={formData.companyName || ""}
                                     required
                                 />
                                 <CustomerInput
@@ -214,6 +232,7 @@ export const CustomerForm = () => {
                                     type="text"
                                     onChange={handleChange}
                                     label="Ville :"
+                                    value={formData.city || ""}
                                     required
                                 />
                             </div>
@@ -225,6 +244,7 @@ export const CustomerForm = () => {
                             type="email"
                             onChange={handleChange}
                             label="Adresse e-mail :"
+                            value={formData.email || ""}
                             required
                         />
                         <CustomerInput
@@ -232,6 +252,7 @@ export const CustomerForm = () => {
                             type="tel"
                             onChange={handleChange}
                             label="Numéro de téléphone :"
+                            value={formData.phoneNumber || ""}
                             required={false}
                         />
                     </div>
@@ -243,6 +264,7 @@ export const CustomerForm = () => {
                                 name="message"
                                 placeholder="Ecrivez vos demandes particulières ici."
                                 onChange={handleChange}
+                                value={formData.message || ""}
                                 className="text-black px-4 p-2 rounded-2xl lg:w-64"
                             />
                         </div>

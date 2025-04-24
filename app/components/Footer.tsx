@@ -37,9 +37,9 @@ export const Footer = () => {
                             Crédits photos
                         </Link>{" "}
                         &mdash;{" "}
-                        <span className="underline cursor-pointer hover:no-underline">
+                        <a href="/cookies" className="underline cursor-pointer hover:no-underline">
                             Politique des cookies
-                        </span>
+                        </a>
                     </p>
                 </div>
             </div>
