@@ -33,30 +33,30 @@ export const CookiesModal = () => {
             <motion.div
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-                className="relative flex flex-col gap-8 bg-white w-1/3 m-auto rounded-lg p-8 text-justify"
+                className="relative flex flex-col gap-8 bg-white w-4/5 md:w-2/3 lg:w-1/2 xl:w-1/3 m-auto rounded-lg p-8 md:p-8 text-center md:text-justify"
             >
                 <IoCloseSharp
                     className="text-black absolute right-4 top-4 cursor-pointer hover:scale-125 hover:font-bold transition-all duration-300"
                     onClick={handleClose}
                 />
-                <p className="text-black pt-4">
+                <p className="text-black text-sm md:text-base pt-4">
                     Nous utilisons des cookies pour améliorer votre expérience
                     sur notre site. En poursuivant votre navigation, vous
                     acceptez l&apos;utilisation des cookies.{"  "}
-                    <a href="/cookies" className="underline">
+                    <br/><a href="/cookies" className="underline">
                         En savoir plus
                     </a>
                     .
                 </p>
-                <div className="w-full">
+                <div className="w-full text-xs md:text-base">
                     <button
-                        className="w-1/2 uppercase py-2 px-8 text-black hover:font-bold transition-all duration-300"
+                        className="w-1/2 uppercase py-2 px-4 md:px-8 text-black hover:font-bold transition-all duration-300"
                         onClick={handleReject}
                     >
                         Refuser
                     </button>
                     <button
-                        className="w-1/2 uppercase py-2 px-8 bg-black hover:font-bold transition-all duration-300"
+                        className="w-1/2 uppercase py-2 px-4 md:px-8 bg-black hover:font-bold transition-all duration-300"
                         onClick={handleAccept}
                     >
                         Accepter
