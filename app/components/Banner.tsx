@@ -22,14 +22,14 @@ export const Banner = () => {
                 priority
                 className="absolute inset-0 z-0 object-cover"
             />
-            <div className="absolute right-0 md:right-8 top-1/2 -translate-y-1/3 z-10 flex gap-4 md:gap-8 flex-col text-white p-8 lg:w-2/5 items-end bg-gradient-to-t from-[#0F1921] via-[#0F1921] to-transparent to-[90%] md:bg-transparent">
+            <div className="absolute right-0 md:right-8 top-1/2 -translate-y-1/3 z-10 flex gap-4 md:gap-8 flex-col text-white p-8 lg:w-2/5 items-end bg-gradient-to-t from-[#0F1921] via-[#0F1921] via-[60%] to-transparent to-[90%] md:bg-transparent lg:via-transparent">
                 <div className="flex flex-col gap-4 items-end">
                     <motion.h1
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1 }}
                         animate={{ x: 0 }}
                         transition={{ ease: "easeOut", duration: 1.2 }}
-                        className="font-vampiro text-4xl md:text-8xl"
+                        className="font-vampiro text-7xl md:text-8xl"
                     >
                         Rekkio
                     </motion.h1>
