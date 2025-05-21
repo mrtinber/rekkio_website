@@ -81,7 +81,7 @@ export default function CookiesPage() {
                     paramètres de votre navigateur à tout moment. Voici quelques
                     liens utiles selon votre navigateur :
                 </p>
-                <ul className="list-disc list-inside pl-8">
+                <ul className="list-disc break-words pl-8">
                     <li>
                         Google Chrome:{" "}
                         <a

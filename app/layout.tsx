@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Oi } from "next/font/google";
+import { Geist, Geist_Mono, Oi, Anton, Vampiro_One, Bruno_Ace_SC, Modak } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +19,30 @@ const oi = Oi({
     style: "normal",
 });
 
+const anton = Anton({
+    variable: "--font-anton",
+    subsets: ["latin"], 
+    weight: "400",   
+})
+
+const vampiro = Vampiro_One({
+    variable: "--font-vampiro",
+    weight: "400", 
+    subsets: ["latin"],
+}) 
+
+const bruno = Bruno_Ace_SC({
+    weight: "400", 
+    variable: "--font-bruno",
+    subsets: ["latin"],
+})
+
+const modak = Modak({
+    weight: "400", 
+    variable: "--font-modak",
+    subsets: ["latin"],
+})
+
 export const metadata: Metadata = {
     title: "Rekkio - Musique, création & partage",
     description: "Découvrez REKKIO, des ateliers musicaux entre partage et émotion. Contactez Quentin pour vos projets.",
@@ -32,7 +56,7 @@ export default function RootLayout({
     return (
         <html lang="fr">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${oi.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${oi.variable} ${anton.variable} ${vampiro.variable} ${bruno.variable} ${modak.variable} antialiased`}
             >
                 {children}
             </body>

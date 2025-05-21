@@ -29,7 +29,7 @@ export const Banner = () => {
                         whileInView={{ opacity: 1 }}
                         animate={{ x: 0 }}
                         transition={{ ease: "easeOut", duration: 1.2 }}
-                        className="font-oi text-5xl md:text-6xl"
+                        className="font-vampiro text-4xl md:text-8xl"
                     >
                         Rekkio
                     </motion.h1>

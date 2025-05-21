@@ -17,6 +17,10 @@ export default {
                 sans: "var(--font-geist-sans), sans-serif",
                 mono: "var(--font-geist-mono), monospace",
                 oi: "var(--font-oi), cursive",
+                anton: "var(--font-anton), sans-serif",
+                vampiro: "var(--font-vampiro), system-ui",
+                bruno: "var(--font-bruno), sans-serif",
+                modak: "var(--font-modak), system-ui",
             },
 
             keyframes: {

@@ -20,9 +20,9 @@ export const IntroSection = () => {
                     transition: { duration: 1.8 },
                 }}
                 viewport={{ once: true }}
-                className="lg:text-justify flex flex-col gap-4 px-6 pb-6 lg:py-6 lg:pr-8 text-base lg:text-lg font-extralight"
+                className="lg:text-justify flex flex-col gap-4 px-6 pb-6 lg:py-6 lg:pr-8 text-base xl:text-lg font-extralight"
             >
-                <h2 className="text-3xl lg:text-4xl font-oi">Qui suis-je?</h2>
+                <h2 className="text-4xl xl:text-6xl font-vampiro">Qui suis-je?</h2>
                 <p>
                     Je suis producteur de musiques électroniques depuis 10 ans.
                     Je suis également diplômé d’état d’éducateur spécialisé
